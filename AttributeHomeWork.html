@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW_AttributeSelector</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 1200px;
+            position: relative;
+            display: block;
+        }
+        .small {
+            width: 240px;
+            position: absolute;
+            margin-left: 50px;
+            margin-top: 50px;
+        }
+        .small img {
+            width: 200px;
+            display: block;
+            height: 600;
+            margin-bottom: 100px;
+        }
+        .big {
+            width: 500px;
+            position: absolute;
+            top: 0;
+            left: 500px;
+            margin-top: 100px;
+        }
+        .big img {
+            width: 150%;
+            display: none;
+        }
+
+        .small div img:hover {
+            cursor: pointer;
+            width: 180px;
+            opacity: 0.5;
+        }
+        .small div[car="ferrari"]:hover ~ .big img[car="ferrari"],
+        .small div[car="lamborghini"]:hover ~ .big img[car="lamborghini"],
+        .small div[car="porsche"]:hover ~ .big img[car="porsche"] {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+    <div class="small">
+        <div car="ferrari"><img src="ferrari.png" alt="Ferrari"></div>
+        <div car="lamborghini"><img src="lamborghini.png" alt="Lamborghini"></div>
+        <div car="porsche"><img src="porsche.png" alt="Porsche"></div>
+        
+        <div class="big">
+            <img car="ferrari" src="ferrari.png" alt="Ferrari">
+            <img car="lamborghini" src="lamborghini.png" alt="Lamborghini">
+            <img car="porsche" src="porsche.png" alt="Porsche">
+        </div>
+    </div>
+   </div>
+</body>
+</html>
